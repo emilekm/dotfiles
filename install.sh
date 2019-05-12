@@ -1,16 +1,25 @@
 #!/bin/bash
 
+function install() {
+    os=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+    if [ "$os" == "Arch Linux" ]; then
+        sudo pacman -S "$1"
+    elif [ "$os" == "Debian GNU/Linux" ]; then
+        sudo apt-get install "$1"
+    fi
+}
+
 if ! command -v git &>/dev/null; then
-    sudo pacman -S git
+    install "git"
 fi
 
 if ! command -v zsh &>/dev/null; then
-    sudo pacman -S zsh
-    chsh -s $(which zsh)
+    install "zsh"
+    sudo chsh -s $(which zsh) "$USER"
 fi
 
 if ! command -v curl &>/dev/null; then
-    sudo pacman -S curl
+    install "curl"
 fi
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
@@ -18,15 +27,17 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
 fi
 
 if ! command -v pacaur &>/dev/null; then
-    temp_dir=$(mktemp -d)
+    if command -v pacman &>/dev/null; then
+        temp_dir=$(mktemp -d)
 
-    git clone https://aur.archlinux.org/pacaur.git $temp_dir
+        git clone https://aur.archlinux.org/pacaur.git $temp_dir
 
-	$(cd $temp_dir && makepkg -sri)
+        $(cd $temp_dir && makepkg -sri)
+    fi
 fi
 
 if ! command -v stow &>/dev/null; then
-    sudo pacman -S stow
+    install "stow"
 fi
 
 
