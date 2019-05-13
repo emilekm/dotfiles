@@ -1,10 +1,17 @@
 #!/bin/bash
 
-function install() {
-    os=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
-    if [ "$os" == "Arch Linux" ]; then
+function install {
+    arch="Arch Linux"
+    manjaro="Manjaro Linux"
+    debian="Debian GNU/Linux"
+
+    os=$(awk -F= '/^NAME/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+    echo "$os"
+    echo "$manjaro"
+    if [ "$os" == "$arch" ] | [ "$os" == "$manjaro" ]; then
+        echo $1
         sudo pacman -S "$1"
-    elif [ "$os" == "Debian GNU/Linux" ]; then
+    elif [ "$os" == "$debian" ]; then
         sudo apt-get install "$1"
     fi
 }
