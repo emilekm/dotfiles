@@ -23,7 +23,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-EDITOR='vim'
+export EDITOR='vim'
 
 
 alias cp="cp -i"                          # confirm before overwriting something
