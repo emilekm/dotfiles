@@ -43,8 +43,8 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-if ! command -v pacaur &>/dev/null; then
-    if command -v pacman &>/dev/null; then
+if [ "$os" == "$arch" ]; then
+    if ! command -v pacaur &>/dev/null; then
         temp_dir=$(mktemp -d)
 
         git clone https://aur.archlinux.org/pacaur.git $temp_dir
