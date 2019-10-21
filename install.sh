@@ -17,22 +17,18 @@ elif [ "$os" == "$debian" ]; then
 fi
 
 function install {
-    echo "Installing $1"
-    eval "$install_cmd $1"
+    if ! command -v $1 &>/dev/null; then
+        echo "Installing $1"
+        eval "$install_cmd $1"
+    fi
 }
 
-if ! command -v git &>/dev/null; then
-    install "git"
-fi
+install "git"
 
-if ! command -v zsh &>/dev/null; then
-    install "zsh"
-    sudo chsh -s $(which zsh) "$USER"
-fi
+install "zsh"
+sudo chsh -s $(which zsh) "$USER"
 
-if ! command -v curl &>/dev/null; then
-    install "curl"
-fi
+install "curl"
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -48,10 +44,7 @@ if ! command -v pacaur &>/dev/null; then
     fi
 fi
 
-if ! command -v stow &>/dev/null; then
-    install "stow"
-fi
-
+install "stow"
 
 # Stow all directories
 for dir in */; do
