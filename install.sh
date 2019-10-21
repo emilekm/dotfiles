@@ -1,19 +1,24 @@
 #!/bin/bash
 
-function install {
-    arch="Arch Linux"
-    manjaro="Manjaro Linux"
-    debian="Debian GNU/Linux"
+arch="Arch Linux"
+manjaro="Manjaro Linux"
+debian="Debian GNU/Linux"
 
-    os=$(awk -F= '/^NAME/{gsub(/"/, "", $2); print $2}' /etc/os-release)
-    echo "$os"
-    echo "$manjaro"
-    if [ "$os" == "$arch" ] | [ "$os" == "$manjaro" ]; then
-        echo $1
-        sudo pacman -S "$1"
-    elif [ "$os" == "$debian" ]; then
-        sudo apt-get install "$1"
-    fi
+os=$(awk -F= '/^NAME/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+
+if [ "$os" == "$arch" ] | [ "$os" == "$manjaro" ]; then
+    os=$arch
+fi
+
+if [ "$os" == "$arch" ]; then
+    install_cmd="sudo pacman -S"
+elif [ "$os" == "$debian" ]; then
+    install_cmd="sudo apt-get install"
+fi
+
+function install {
+    echo "Installing $1"
+    eval "$install_cmd $1"
 }
 
 if ! command -v git &>/dev/null; then
