@@ -23,6 +23,15 @@ function install {
     fi
 }
 
+install "stow"
+
+# Stow all directories
+for dir in */; do
+    echo "Stowing ${dir::-1}"
+    stow -D $dir
+    stow $dir
+done
+
 install "git"
 
 install "zsh"
@@ -44,11 +53,3 @@ if ! command -v pacaur &>/dev/null; then
     fi
 fi
 
-install "stow"
-
-# Stow all directories
-for dir in */; do
-    echo "Stowing ${dir::-1}"
-    stow -D $dir
-    stow $dir
-done
