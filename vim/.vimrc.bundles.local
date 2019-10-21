@@ -1,0 +1,6 @@
+" Bundle 'arcticicestudio/nord-vim'
+Bundle 'kaicataldo/material.vim'
+Bundle 'leafgarland/typescript-vim'
+UnBundle 'amirh/HTML-AutoCloseTag'
+" Bundle 'vim-scripts/HTML-AutoCloseTag'
+Bundle 'editorconfig/editorconfig-vim'

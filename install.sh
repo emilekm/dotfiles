@@ -53,3 +53,7 @@ if [ "$os" == "$arch" ]; then
     fi
 fi
 
+install "vim"
+
+# Install spf13-vim
+sh <(curl https://j.mp/spf13-vim3 -L)
