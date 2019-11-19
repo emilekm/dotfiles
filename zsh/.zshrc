@@ -13,6 +13,7 @@ plugins=(
   # git
   pyenv
   sudo
+  ssh-agent
   systemadmin
   transfer
   zsh-syntax-highlighting
