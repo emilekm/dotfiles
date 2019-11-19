@@ -30,3 +30,5 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias vim='nvim'
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
