@@ -55,5 +55,7 @@ fi
 
 install "vim"
 
-# Install spf13-vim
-sh <(curl https://j.mp/spf13-vim3 -L)
+if [[ ! -d "$HOME/.spf13-vim" ]]; then
+    # Install spf13-vim
+    sh <(curl https://j.mp/spf13-vim3 -L)
+fi
