@@ -38,3 +38,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
 export NVM_SOURCE="/usr/share/nvm"                     # The AUR package installs it to here.
 [ -s "$NVM_SOURCE/nvm.sh"  ] && . "$NVM_SOURCE/nvm.sh"  # Load NVM
+
+# Setup virtualenv files inside project root (pipenv)
+export PIPENV_VENV_IN_PROJECT=1
