@@ -24,7 +24,6 @@ function install {
 }
 
 install "stow"
-
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"
@@ -53,7 +52,8 @@ if [ "$os" == "$arch" ]; then
     fi
 fi
 
-install "vim"
+# Vim
+install "neovim"
 
 if [[ ! -d "$HOME/.spf13-vim-3" ]]; then
     # Install spf13-vim

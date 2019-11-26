@@ -24,7 +24,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 
 alias cp="cp -i"                          # confirm before overwriting something
