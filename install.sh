@@ -64,3 +64,8 @@ fi
 if [[ ! -d "$HOME/.pyenv" ]]; then
     curl https://pyenv.run | bash
 fi
+
+# Node Version Manager
+if [[ ! -d "$HOME/.pyenv" ]]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+fi
