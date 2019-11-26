@@ -59,3 +59,8 @@ if [[ ! -d "$HOME/.spf13-vim-3" ]]; then
     # Install spf13-vim
     sh <(curl https://j.mp/spf13-vim3 -L)
 fi
+
+# Pyenv
+if [[ ! -d "$HOME/.pyenv" ]]; then
+    curl https://pyenv.run | bash
+fi
