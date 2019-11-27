@@ -1,28 +1,6 @@
-export ZSH="/home/cassius23/.oh-my-zsh"
+source $HOME/antigen.zsh
 
-ZSH_THEME="agnoster"
-
-plugins=(
-  archlinux
-  colored-man-pages
-  dirhistory
-  django
-  fancy-ctrl-z
-  gitignore
-  gpg-agent
-  # git
-  pyenv
-  sudo
-  ssh-agent
-  systemadmin
-  transfer
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  zsh_reload
-)
-
-source $ZSH/oh-my-zsh.sh
-
+antigen init "$HOME/.antigenrc"
 
 export EDITOR='nvim'
 export VISUAL='nvim'

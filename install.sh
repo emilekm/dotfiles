@@ -38,8 +38,8 @@ sudo chsh -s $(which zsh) "$USER"
 
 install "curl"
 
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ ! -d "$HOME/antigen.zsh" ]]; then
+    curl -L git.io/antigen > $HOME/antigen.zsh
 fi
 
 if [ "$os" == "$arch" ]; then

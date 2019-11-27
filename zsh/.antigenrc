@@ -1,0 +1,27 @@
+antigen use oh-my-zsh
+
+
+antigen bundles <<EOBUNDLES
+    archlinux
+    colored-man-pages
+    dirhistory
+    django
+    fancy-ctrl-z
+    gitignore
+    gpg-agent
+    # git
+    pyenv
+    sudo
+    ssh-agent
+    systemadmin
+    transfer
+    zsh_reload
+
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+EOBUNDLES
+
+antigen theme agnoster
+
+antigen apply
