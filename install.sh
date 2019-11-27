@@ -66,6 +66,6 @@ if [[ ! -d "$HOME/.pyenv" ]]; then
 fi
 
 # Node Version Manager
-if [[ ! -d "$HOME/.pyenv" ]]; then
+if [[ ! -d "$HOME/.nvm" ]]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 fi
