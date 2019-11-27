@@ -38,7 +38,7 @@ sudo chsh -s $(which zsh) "$USER"
 
 install "curl"
 
-if [[ ! -d "$HOME/antigen.zsh" ]]; then
+if [[ ! -f "$HOME/antigen.zsh" ]]; then
     curl -L git.io/antigen > $HOME/antigen.zsh
 fi
 
