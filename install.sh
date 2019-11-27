@@ -28,7 +28,7 @@ install "stow"
 for dir in */; do
     echo "Stowing ${dir::-1}"
     stow -D $dir
-    stow $dir
+    stow -t $HOME $dir
 done
 
 install "git"
