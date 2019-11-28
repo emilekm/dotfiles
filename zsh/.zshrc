@@ -1,6 +1,6 @@
 source $HOME/antigen.zsh
 
-antigen init "$HOME/.antigenrc"
+antigen init $HOME/.antigenrc
 
 export EDITOR='nvim'
 export VISUAL='nvim'
