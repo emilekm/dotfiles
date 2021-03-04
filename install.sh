@@ -27,7 +27,7 @@ install "stow"
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"
-    stow -D $dir
+    # stow -D $dir
     stow -t $HOME $dir
 done
 

@@ -66,3 +66,5 @@ map <S-ScrollWheelRight> <nop>
 map <C-ScrollWheelRight> <nop>
 
 let g:ctrlp_custom_ignore = '.svn'
+
+let g:deoplete#enable_at_startup = 1

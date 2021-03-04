@@ -4,3 +4,7 @@ Bundle 'leafgarland/typescript-vim'
 UnBundle 'amirh/HTML-AutoCloseTag'
 " Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'editorconfig/editorconfig-vim'
+
+Bundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+UnBundle 'Shougo/neocomplete.vim'

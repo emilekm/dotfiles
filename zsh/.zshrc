@@ -20,3 +20,16 @@ export NVM_SOURCE="/usr/share/nvm"                     # The AUR package install
 
 # Setup virtualenv files inside project root (pipenv)
 export PIPENV_VENV_IN_PROJECT=1
+
+export TERM=xterm-256color
+
+alias xclip="xclip -selection clipboard"
+
+xbindkeys
+
+source $HOME/.cargo/env
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH=$PATH:$(go env GOPATH)/bin
